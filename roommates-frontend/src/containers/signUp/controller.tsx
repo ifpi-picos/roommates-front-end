@@ -1,5 +1,5 @@
 import React from 'react';
-import withTemplateInitialPage from '../../hoc/withTemplate';
+import { withTemplateInitialPage } from '~/hoc';
 
 import View from './view';
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import InitialPage from '../components/InitialPage/initialPage';
-import Login from '../containers/login';
+import Start from '../containers/start';
 
 const Home: React.FC = () => {
   return (
@@ -11,7 +10,7 @@ const Home: React.FC = () => {
       </Head>
 
       <main>
-        <Login />
+          <Start />
       </main>
     </div>
   );
