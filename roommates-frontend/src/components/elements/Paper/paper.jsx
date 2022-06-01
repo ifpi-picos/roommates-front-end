@@ -6,9 +6,10 @@ const SimplePaper = ({children, ...props}) => {
     <Paper sx={{
       width: "100%",
       maxWidth: "360px",
-      minHeight: "50vh",
-      padding: "2rem 1rem"
+      padding: "2.5rem 1rem",
+      borderRadius: "24px"
     }}
+    elevation={4}
     >
       {children}
     </Paper>
