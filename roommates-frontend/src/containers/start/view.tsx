@@ -1,8 +1,9 @@
 import React from 'react';
-import Head from 'next/head';
+
+import { Start } from '~/components';
 
 const View = () => {
-  return <>opa</>
+  return <Start />
 };
 
 
