@@ -1,14 +1,14 @@
 import React from 'react';
-import { Box, Paper } from '~/components';
+import { Container, Paper } from '~/components';
 
 const withTemplateInitialPage = Component => {
   const ExtendedComponent = props => {
     return (
-      <Box>
+      <Container>
         <Paper>
           <Component {...props} />
         </Paper>
-      </Box>
+      </Container>
     )
   };
 
