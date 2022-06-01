@@ -1,4 +1,4 @@
-const theme = {
+const palette = {
   primary: {
     light: "#8EA5F9",
     main: "#4361EE",
@@ -41,4 +41,18 @@ const theme = {
   }
 }
 
-export default theme;
+const breakpoints = ['425px', '768px', '1024px', '1200px', '1440px', '2560px'];
+
+const mediaQueries = {
+  small: `@media screen and (min-width: ${breakpoints[0]})`,
+  medium: `@media screen and (min-width: ${breakpoints[1]})`,
+  large: `@media screen and (min-width: ${breakpoints[2]})`,
+  extralarge: `@media screen and (min-width: ${breakpoints[3]})`,
+  extraExtralarge: `@media screen and (min-width: ${breakpoints[4]})`,
+};
+
+export default {
+  palette,
+  breakpoints,
+  mediaQueries
+};

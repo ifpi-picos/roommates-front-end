@@ -8,7 +8,8 @@ const Form = ({children, ...props}) => {
     <Box component="form" width="100%" minHeight="30vh" sx={{
       display: "flex",
       flexDirection: "column",
-      justifyContent: "space-evenly"
+      justifyContent: "space-evenly",
+      ...props
     }}>
       {children}
     </Box>

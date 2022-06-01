@@ -4,14 +4,15 @@ import { theme } from "~/styles";
 
 const SimpleContainer = ({children, ...props}) => {
   return (
-    <Container sx={{
-      backgroundColor: theme.primary.main,
+    <Container maxWidth="100%" className="container" sx={{
+      backgroundColor: theme.palette.primary.main,
       minHeight: "100vh",
       padding: "0 .8375rem",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
+      maxWidth: "100%"
     }}
     >
       {children}

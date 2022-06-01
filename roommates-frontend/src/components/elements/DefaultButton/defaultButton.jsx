@@ -11,8 +11,8 @@ const DefaultButton = ({buttonText, ...props}) => {
       sx={{
         borderRadius: '24px',
         minHeight: "2.9375rem",
-        color: theme.colors.lightest,
-        background: theme.primary.main,
+        color: theme.palette.colors.lightest,
+        background: theme.palette.primary.main,
         textTransform: 'capitalize',
         fontSize: '1rem'
       }}

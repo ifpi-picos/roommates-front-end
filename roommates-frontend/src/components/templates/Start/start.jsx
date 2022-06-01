@@ -12,7 +12,7 @@ const Start = () => {
         variant="h1"
         fontSize="36px"
         fontWeight="500"
-        color={theme.primary.main}
+        color={theme.palette.primary.main}
       >
         Iniciar
       </Typography>
