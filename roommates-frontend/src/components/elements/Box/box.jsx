@@ -7,11 +7,15 @@ const BoxSx = ({children, ...props}) => {
     <Box sx={{
       backgroundColor: theme.primary.main,
       minHeight: "100vh",
+      padding: "0 .8375rem",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-    }}>{children}</Box>
+    }}
+    >
+      {children}
+    </Box>
   )
 }
 
