@@ -1,7 +1,9 @@
 import React from 'react';
 
+import { SignUp } from '~/components';
+
 const View = () => {
-  return <></>
+  return <SignUp />
 };
 
 
