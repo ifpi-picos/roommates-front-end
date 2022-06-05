@@ -3,7 +3,7 @@ import React from 'react';
 import { SearchBar } from '~/components';
 
 const View = () => {
-  return <SearchBar />
+  return <h1>Home</h1>
 };
 
 

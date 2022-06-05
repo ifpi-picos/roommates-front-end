@@ -4,15 +4,19 @@ import { InputBase, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 import { theme } from '~/styles';
+import './index'
 
 const SearchBar = () => {
   return (
     <Paper
+      className='searchBar'
       component="form"
       sx={{
-        p: '2px 4px', display: 'flex', alignItems: 'center', width: 400,
+        p: '2px 4px', display: 'flex', alignItems: 'center', width: '90%',
         background: theme.palette.background.disabled,
         borderRadius: '24px',
+        position: 'absolute',
+        top: '1rem'
       }}
     >
       <IconButton

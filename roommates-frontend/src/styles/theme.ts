@@ -38,6 +38,9 @@ const palette = {
     purple: '#7209b7',
     violet: '#3a0ca3',
     disabled: "#E5E5E5"
+  },
+  borders: {
+    gray: 'rgba(133, 138, 164, 0.3)'
   }
 }
 

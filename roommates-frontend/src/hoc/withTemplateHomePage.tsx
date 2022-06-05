@@ -1,12 +1,16 @@
 import React from 'react';
-import { Container } from '~/components';
+import { BottomNavigation, Container, Flex, SearchBar } from '~/components';
 
 const withTemplateHomePage = Component => {
   const ExtendedComponent = props => {
     return (
-     <Container>
-      <Component {...props} />
-     </Container>
+      <Flex justifyContent="space-between" alignItems="center">
+        <Container>
+          <SearchBar />
+          <Component {...props} />
+        </Container>
+        <BottomNavigation />
+      </Flex>
     )
   };
 

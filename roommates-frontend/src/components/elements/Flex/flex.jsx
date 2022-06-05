@@ -1,11 +1,12 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { theme } from "~/styles";
 
 const Flex = ({children, ...props}) => {
   return (
     <Box sx={{
+      width: "100%",
       height: "100%",
+      minHeight: props.minHeight || 'auto',
       display: "flex",
       flexDirection: "column",
       alignItems: props.alignItems || 'start',
