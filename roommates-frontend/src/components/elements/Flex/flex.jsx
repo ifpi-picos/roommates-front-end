@@ -12,6 +12,7 @@ const Flex = ({children, ...props}) => {
       alignItems: props.alignItems || 'start',
       justifyContent: props.justifyContent || 'start',
     }}
+    {...props}
     >
       {children}
     </Box>
