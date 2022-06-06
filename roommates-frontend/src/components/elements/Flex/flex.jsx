@@ -8,7 +8,7 @@ const Flex = ({children, ...props}) => {
       height: "100%",
       minHeight: props.minHeight || 'auto',
       display: "flex",
-      flexDirection: "column",
+      flexDirection: props.direction || "column",
       alignItems: props.alignItems || 'start',
       justifyContent: props.justifyContent || 'start',
     }}

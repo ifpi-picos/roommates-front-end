@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Feed } from '~/components';
 
-const View = () => {
-  return <Feed />
+const View = ({ publications }) => {
+  return <Feed publications={publications}/>
 };
 
 

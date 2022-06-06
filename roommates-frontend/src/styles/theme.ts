@@ -25,26 +25,27 @@ const palette = {
     dark: "#1E8212",
   },
   colors: {
-    lightest: '#ffffff',
-    pink: '#f72585',
-    purple: '#7209b7',
-    violet: '#3a0ca3',
-    disabled: "#E5E5E5"
+    lightest: "#ffffff",
+    pink: "#f72585",
+    purple: "#7209b7",
+    violet: "#3a0ca3",
+    disabled: "#E5E5E5",
+    dark: "#000000",
   },
 
   background: {
-    lightest: '#ffffff',
-    pink: '#f72585',
-    purple: '#7209b7',
-    violet: '#3a0ca3',
+    lightest: "#ffffff",
+    pink: "#f72585",
+    purple: "#7209b7",
+    violet: "#3a0ca3",
     disabled: "#E5E5E5"
   },
   borders: {
-    gray: 'rgba(133, 138, 164, 0.3)'
+    gray: "rgba(133, 138, 164, 0.3)"
   }
 }
 
-const breakpoints = ['425px', '768px', '1024px', '1200px', '1440px', '2560px'];
+const breakpoints = ["425px", "768px", "1024px", "1200px", "1440px", "2560px"];
 
 const mediaQueries = {
   small: `@media screen and (min-width: ${breakpoints[0]})`,
