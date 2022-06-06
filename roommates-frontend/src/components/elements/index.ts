@@ -7,4 +7,5 @@ export { default as Form } from './Form';
 export { default as Input } from './Input';
 export { default as Paper } from './Paper';
 export { default as StarRating } from './StarRating';
+export { default as TotalComments } from './TotalComments';
 
