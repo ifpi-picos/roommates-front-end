@@ -3,20 +3,20 @@ import { Box } from "@mui/material";
 
 import { Card } from "~/components";
 
-const Feed = ({ publications }) => {
+const Feed = ({ posts }) => {
   return (
     <>
       {
-        publications.map((publication, index) => {
+        posts.map((post, index) => {
           return (
             <Box key={index} sx={{padding: '1rem 0'}}>
               <Card
-              id={publication.id}
-              image={publication.image}
-              startRating={publication.startRating}
-              comments={publication.comments}
+              id={post.id}
+              images={post.images}
+              starRating={post.starRating}
+              totalComments={post.totalComments}
             >
-              { publication.description }
+              { post.description }
             </Card>
             </Box>
           )

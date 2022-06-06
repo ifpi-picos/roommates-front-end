@@ -7,7 +7,9 @@ const withTemplateHomePage = Component => {
       <Flex justifyContent="space-between" alignItems="center">
         <Container>
           <SearchBar />
-          <Component {...props} />
+          <Flex alignItems="center" sx={{marginTop: '100px'}}>
+            <Component {...props} />
+          </Flex>
         </Container>
         <BottomNavigation />
       </Flex>
