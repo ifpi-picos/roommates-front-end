@@ -4,7 +4,6 @@ import { InputBase, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 import { theme } from '~/styles';
-import './index'
 
 const SearchBar = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import { Box, Button, Checkbox, FormControlLabel, TextField, Typography } from "@mui/material";
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { Checkbox, FormControlLabel, TextField, Typography } from "@mui/material";
+import { ArrowForwardIosIcon } from '@mui/icons-material';
 
 import { theme } from "~/styles";
 import { Flex, DefaultButton, Form, Input } from "~/components";

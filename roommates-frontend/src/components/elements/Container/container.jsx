@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "@mui/material";
+
 import { theme } from "~/styles";
 
 const SimpleContainer = ({children, ...props}) => {

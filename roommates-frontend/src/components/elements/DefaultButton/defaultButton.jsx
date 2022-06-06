@@ -2,7 +2,6 @@ import React from "react";
 import { Button } from "@mui/material";
 
 import { theme } from "~/styles";
-import { textTransform } from "@mui/system";
 
 const DefaultButton = ({buttonText, ...props}) => {
   return (
