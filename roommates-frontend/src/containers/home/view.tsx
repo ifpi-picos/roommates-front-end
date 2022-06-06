@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { SearchBar } from '~/components';
+import { Feed } from '~/components';
 
 const View = () => {
-  return <h1>Home</h1>
+  return <Feed />
 };
 
 
