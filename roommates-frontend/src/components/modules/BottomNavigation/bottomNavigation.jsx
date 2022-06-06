@@ -5,6 +5,28 @@ import { Search, MapsHomeWork, FavoriteBorder, Person } from '@mui/icons-materia
 import { theme } from '~/styles';
 
 const SimpleBottomNavigation = () => {
+  const actions = [
+    {
+      label: 'Pesquisar',
+      value: 'search',
+      icon: <Search sx={{color: theme.palette.primary.main}} />
+    },
+    {
+      label: 'Imóveis',
+      value: 'properties',
+      icon: <MapsHomeWork sx={{color: theme.palette.primary.main}}/>
+    },
+    {
+      label: 'Favoritos',
+      value: 'favorites',
+      icon: <FavoriteBorder sx={{color: theme.palette.primary.main}}/>
+    },
+    {
+      label: 'Perfil',
+      value: 'profile',
+      icon: <Person sx={{color: theme.palette.primary.main}}/>
+    }
+  ]
   return (
     <BottomNavigation
       showLabels
@@ -20,30 +42,19 @@ const SimpleBottomNavigation = () => {
         }
       }
     >
-      <BottomNavigationAction
-        sx={{ justifyContent: 'space-evenly' }}
-        label="Pesquisar"
-        value="search"
-        icon={<Search />}
-      />
-      <BottomNavigationAction
-        sx={{ justifyContent: 'space-evenly' }}
-        label="Imóveis"
-        value="properties"
-        icon={<MapsHomeWork />}
-      />
-      <BottomNavigationAction
-        sx={{ justifyContent: 'space-evenly' }}
-        label="Favoritos"
-        value="favorites"
-        icon={<FavoriteBorder />}
-      />
-      <BottomNavigationAction
-        sx={{ justifyContent: 'space-evenly' }}
-        label="Perfil"
-        value="profile"
-        icon={<Person />}
-      />
+      {
+        actions.map((action, index) => {
+          return (
+            <BottomNavigationAction
+              key={index}
+              sx={{ justifyContent: 'space-evenly' }}
+              label={action.label}
+              value={action.value}
+              icon={action.icon}
+            />
+          )
+        })
+      }
     </BottomNavigation>
   );
 }

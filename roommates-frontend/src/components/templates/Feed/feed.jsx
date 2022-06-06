@@ -11,6 +11,7 @@ const Feed = ({ publications }) => {
           return (
             <Box key={index} sx={{padding: '1rem 0'}}>
               <Card
+              id={publication.id}
               image={publication.image}
               startRating={publication.startRating}
               comments={publication.comments}
