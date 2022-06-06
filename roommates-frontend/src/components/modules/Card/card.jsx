@@ -1,42 +1,20 @@
 import React, { useState } from 'react';
 import { Box, Card, CardActions, CardContent, CardMedia, IconButton, Typography } from '@mui/material';
 import { Favorite, Star } from '@mui/icons-material';
-import { Flex } from '~/components/elements';
+
+import { Carousel, Flex } from '~/components';
 import { theme } from '~/styles';
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+
 import Link from 'next/link';
 
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1
-  }
-};
+
 const RecipeReviewCard = ({ id, image, startRating, comments, children }) => {
   const [favorited, setFavorited] = useState(false)
 
   return (
     <Link href={`/publicacao/${id}`} sx={{padding: '1rem 0'}}>
       <Card sx={{ maxWidth: 345 }}>
-        <Carousel
-          responsive={responsive}
-          removeArrowOnDeviceType={["tablet", "mobile"]}
-          showDots
-        >
+        <Carousel>
           <CardMedia
             component="img"
             height="194"
