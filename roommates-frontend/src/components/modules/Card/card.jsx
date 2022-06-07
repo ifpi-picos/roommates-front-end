@@ -6,10 +6,9 @@ import { Card, CardActions, CardContent, CardMedia, Typography } from '@mui/mate
 import { Carousel, Flex, FavoritedButton, StarRating, TotalComments } from '~/components';
 import { theme } from '~/styles';
 
-const RecipeReviewCard = ({ id, images, starRating, totalComments, children }) => {
+const RecipeReviewCard = ({ images, starRating, totalComments, children }) => {
   return (
-    <Link href={`/publicacao/${id}`} sx={{ padding: '1rem 0' }}>
-      <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }}>
         <Carousel>
           {images.map(image => {
             return (
@@ -27,7 +26,7 @@ const RecipeReviewCard = ({ id, images, starRating, totalComments, children }) =
           <Flex direction="row" justifyContent="space-between" alignItems="center">
             <StarRating totalRating={starRating} />
             <TotalComments totalComments={totalComments}/>
-            <FavoritedButton />
+            <FavoritedButton sx={{zIndex: '100'}}/>
           </Flex>
         </CardActions>
         <CardContent>
@@ -36,7 +35,6 @@ const RecipeReviewCard = ({ id, images, starRating, totalComments, children }) =
           </Typography>
         </CardContent>
       </Card>
-    </Link>
   );
 }
 

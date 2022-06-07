@@ -5,11 +5,15 @@ import { IconButton } from "@mui/material";
 
 import { theme } from "~/styles";
 
-const FavoritedButton = () => {
+const FavoritedButton = (props) => {
   const [favorited, setFavorited] = useState(false)
 
+  const handleClick = (event) => {
+      event.preventDefault()
+      return setFavorited(!favorited)
+  }
   return (
-    <IconButton aria-label="add to favorites" onClick={() => setFavorited(!favorited)}>
+    <IconButton {...props} aria-label="add to favorites" onClick={(event) => handleClick(event)}>
       <Favorite sx={{ fontSize: '1.5rem', color: favorited ? theme.palette.colors.pink : 'inherit' }} />
     </IconButton>
   )
