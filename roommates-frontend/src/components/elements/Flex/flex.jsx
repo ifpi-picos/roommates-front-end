@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 const Flex = ({children, ...props}) => {
   return (
     <Box sx={{
-      width: "100%",
+      width: props.width || "100%",
       height: "100%",
       minHeight: props.minHeight || 'auto',
       display: "flex",

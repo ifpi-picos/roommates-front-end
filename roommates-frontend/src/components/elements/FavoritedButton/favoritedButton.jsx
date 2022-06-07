@@ -13,7 +13,7 @@ const FavoritedButton = (props) => {
       return setFavorited(!favorited)
   }
   return (
-    <IconButton {...props} aria-label="add to favorites" onClick={(event) => handleClick(event)}>
+    <IconButton {...props} sx={{ backgroundColor: theme.palette.background.lightest}} aria-label="add to favorites" onClick={(event) => handleClick(event)}>
       <Favorite sx={{ fontSize: '1.5rem', color: favorited ? theme.palette.colors.pink : 'inherit' }} />
     </IconButton>
   )

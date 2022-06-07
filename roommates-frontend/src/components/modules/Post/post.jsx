@@ -4,16 +4,19 @@ import { ArrowBack, Favorite, Star } from '@mui/icons-material';
 
 import { Carousel, Flex, FavoritedButton, StarRating, TotalComments } from '~/components';
 import { theme } from '~/styles';
+import Link from 'next/link';
 
 const Post = ({ currentPost }) => {
-  const { images, totalRatings, totalComments, description } = currentPost
+  const { images, starRating, totalComments, description } = currentPost;
   return (
     <Card className='card-container'>
       <CardActions className='card-container__actions' disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <ArrowBack />
-        </IconButton>
-        <FavoritedButton />
+        <Link href="/home">
+          <IconButton disableRipple sx={{background: theme.palette.background.lightest, color: theme.palette.colors.pink}} aria-label="add to favorites">
+            <ArrowBack />
+          </IconButton>
+        </Link>
+        <FavoritedButton disableRipple sx={{background: theme.palette.background.lightest}}/>
       </CardActions>
       <Carousel>
         {images.map(image => {
@@ -35,8 +38,8 @@ const Post = ({ currentPost }) => {
         </Typography>
       </CardContent>
 
-      <Flex direction="row" alignItems="center">
-        <StarRating totalRatings={totalRatings} />
+      <Flex direction="row" justifyContent="space-between" width="60%" alignItems="center">
+        <StarRating totalRatings={starRating} />
         <TotalComments totalComments={totalComments}/>
       </Flex>
     </Card>
