@@ -6,6 +6,7 @@ import { Star } from "@mui/icons-material";
 import { theme } from "~/styles";
 
 const StarRating = ({ totalRatings }) => {
+  console.log('TOTAL', totalRatings)
   return (
     <IconButton aria-label="star rating">
       <Star sx={{fontSize: '1rem', marginRight: '5px', color: theme.palette.warning.main }}/>

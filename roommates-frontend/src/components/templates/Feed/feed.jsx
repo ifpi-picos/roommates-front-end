@@ -1,8 +1,9 @@
 import React from "react";
+import Link from "next/link";
+
 import { Box } from "@mui/material";
 
 import { Card } from "~/components";
-import Link from "next/link";
 
 const Feed = ({ posts }) => {
   return (
@@ -10,7 +11,7 @@ const Feed = ({ posts }) => {
       {
         posts.map((post, index) => {
           return (
-            <Link href={`/publicacao/${post.id}`} sx={{ padding: '1rem 0' }}>
+            <Link href={`/publicacao/${post.id}`}>
               <Box key={index} sx={{ padding: '1rem 0' }}>
                 <Card
                   images={post.images}

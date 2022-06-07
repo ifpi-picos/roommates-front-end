@@ -1,9 +1,14 @@
+import { Box } from '@mui/material';
 import React from 'react';
 
 import { Feed } from '~/components';
 
 const View = ({ posts }) => {
-  return <Feed posts={posts}/>
+  return (
+    <Box sx={{margin: '5rem 0'}}>
+      <Feed posts={posts}/>
+    </Box>
+  )
 };
 
 

@@ -24,7 +24,7 @@ const RecipeReviewCard = ({ images, starRating, totalComments, children }) => {
         </Carousel>
         <CardActions disableSpacing>
           <Flex direction="row" justifyContent="space-between" alignItems="center">
-            <StarRating totalRating={starRating} />
+            <StarRating totalRatings={starRating} />
             <TotalComments totalComments={totalComments}/>
             <FavoritedButton sx={{zIndex: '100'}}/>
           </Flex>
