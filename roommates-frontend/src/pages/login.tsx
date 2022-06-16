@@ -1,1 +1,1 @@
-export { default, getServerSideProps } from '../containers/signIn';
+export { default, getServerSideProps } from '../containers/signUp/signIn';

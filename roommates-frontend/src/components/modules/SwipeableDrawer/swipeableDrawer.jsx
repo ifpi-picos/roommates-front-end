@@ -1,43 +1,38 @@
 import React, { useEffect } from 'react';
 import { Global } from '@emotion/react';
 import { styled } from '@mui/material/styles';
-import { Box, Typography, Skeleton, SwipeableDrawer} from '@mui/material/Box';
+import { Box, Typography, SwipeableDrawer, CardHeader, Avatar } from '@mui/material';
 
 import { theme } from '~/styles'
+import { DefaultButton, Flex } from '~/components/elements';
+import Card from '../Card';
 
 const drawerBleeding = 0;
 
 const StyledDrawer = styled(Box)(() => ({
   height: '100%',
   backgroundColor:
-    theme.palette.background.pink,
+    theme.palette.background.lightest,
 }));
 
-const SwipeableEdgeDrawer = ({ open, toggleDrawer }) => {
+const SwipeableEdgeDrawer = ({ open, toggleDrawer, currentPost }) => {
   let container;
 
   useEffect(() => {
     if (window !== undefined) {
       container = window.document.body
     }
-  }, [])
 
-  const Puller = styled(Box)(({ theme }) => ({
-    width: 30,
-    height: 6,
-    backgroundColor: theme.palette.primary.main,
-    borderRadius: 3,
-    position: 'absolute',
-    top: 8,
-    left: 'calc(50% - 15px)',
-  }));
+    console.log(currentPost)
+  }, [])
 
   return (
     <>
       <Global
         styles={{
           '.MuiDrawer-root > .MuiPaper-root': {
-            height: `calc(50% - ${drawerBleeding}px)`,
+            padding: '1rem 0',
+            height: 'auto',
             overflow: 'visible',
           },
         }}
@@ -57,27 +52,43 @@ const SwipeableEdgeDrawer = ({ open, toggleDrawer }) => {
       >
         <StyledDrawer
           sx={{
-            position: 'absolute',
-            top: -drawerBleeding,
+            padding: '1.5rem 1rem',
             borderTopLeftRadius: 8,
             borderTopRightRadius: 8,
             visibility: 'visible',
-            right: 0,
-            left: 0,
           }}
         >
-          <Puller />
-          <Typography sx={{ p: 2, color: 'text.secondary' }}>51 results</Typography>
+          <Typography sx={{ color: theme.palette.primary.main }}>Ficamos feliz por ter encontrado um lugar para ficar</Typography>
+          <Flex alignItems="flex-end">
+            <DefaultButton size='small' buttonText='R$ 100,00' />
+          </Flex>
+
         </StyledDrawer>
         <StyledDrawer
           sx={{
-            px: 2,
-            pb: 2,
-            height: '100%',
-            overflow: 'auto',
+            padding: '0 1rem',
           }}
         >
-          <Skeleton variant="rectangular" height="100%" />
+          <Card
+            images={currentPost.images}
+            starRating={currentPost.starRating}
+            totalComments={currentPost.totalComments}
+          >
+            <Flex direction='row' alignItems="center">
+              {currentPost.description}
+              <CardHeader
+                avatar={
+                  <Avatar alt="Remy Sharp"
+                    src={currentPost.host.image}
+                    sx={{ width: 56, height: 56 }}
+                  />
+
+                }
+              />
+            </Flex>
+          </Card>
+
+          <DefaultButton buttonText='Entrar em contato com o anfitrião' />
         </StyledDrawer>
       </SwipeableDrawer>
     </>

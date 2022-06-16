@@ -5,7 +5,7 @@ import { DefaultButton, Flex, Post, SwipeableDrawer } from '~/components';
 import { theme } from '~/styles'
 
 
-const View = ({ currentPost, ...props }) => {
+const View = ({ currentPost }) => {
   const [open, setOpen] = useState(false);
 
   const toggleDrawer = (newOpen: boolean) => () => {
@@ -81,7 +81,7 @@ const View = ({ currentPost, ...props }) => {
           </Flex>
         </Box>
 
-        <SwipeableDrawer open={open} toggleDrawer={toggleDrawer} />
+        <SwipeableDrawer currentPost={currentPost} open={open} toggleDrawer={toggleDrawer} />
       </Box>
     </>
   )

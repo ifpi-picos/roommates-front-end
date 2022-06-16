@@ -7,13 +7,13 @@ const DefaultButton = ({ buttonText, ...props }) => {
   return (
     <Button
       {...props}
-      fullWidth
+      fullWidth={!props.size ? true : false}
       sx={{
         borderRadius: '24px',
         minHeight: "2.9375rem",
         color: theme.palette.colors.lightest,
         background: theme.palette.primary.main,
-        textTransform: 'capitalize',
+        textTransform: 'none',
         fontSize: '1rem'
       }}
       variant="contained"
