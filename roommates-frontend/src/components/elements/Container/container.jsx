@@ -3,7 +3,7 @@ import { Container } from "@mui/material";
 
 import { theme } from "~/styles";
 
-const SimpleContainer = ({children, ...props}) => {
+const SimpleContainer = ({ children, ...props }) => {
   return (
     <Container maxWidth="100%" className="container" sx={{
       backgroundColor: props.bg || theme.palette.background.lightest,

@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 
 import { theme } from "~/styles";
 
-const DefaultButton = ({buttonText, ...props}) => {
+const DefaultButton = ({ buttonText, ...props }) => {
   return (
     <Button
       {...props}
@@ -19,9 +19,9 @@ const DefaultButton = ({buttonText, ...props}) => {
       variant="contained"
       endIcon={props.endIcon}
       startIcon={props.startIcon}
-      >
-        {buttonText}
-      </Button>
+    >
+      {buttonText}
+    </Button>
   )
 }
 

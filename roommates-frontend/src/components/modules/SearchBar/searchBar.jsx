@@ -1,6 +1,6 @@
 import React from 'react';
-import Paper from '@mui/material/Paper';
-import { InputBase, IconButton, Box } from '@mui/material';
+
+import { InputBase, IconButton, Box, Paper } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 import { theme } from '~/styles';

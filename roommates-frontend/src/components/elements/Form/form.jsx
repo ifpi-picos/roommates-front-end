@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 
-const Form = ({children, ...props}) => {
+const Form = ({ children, ...props }) => {
   return (
     <Box component="form" width="100%" minHeight="30vh" sx={{
       display: "flex",

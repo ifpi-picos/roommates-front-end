@@ -1,10 +1,11 @@
 import React from 'react';
-import { Box, Card, CardActions, CardContent, CardMedia, Grid, IconButton, Typography } from '@mui/material';
-import { ArrowBack, Favorite, Star, Bed } from '@mui/icons-material';
+import Link from 'next/link';
+
+import { ArrowBack } from '@mui/icons-material';
+import { Card, CardActions, CardContent, CardMedia, Grid, IconButton, Typography } from '@mui/material';
 
 import { Carousel, Flex, FavoritedButton, StarRating, TotalComments } from '~/components';
 import { theme } from '~/styles';
-import Link from 'next/link';
 
 const Post = ({ currentPost }) => {
   const { images, starRating, totalComments, description, amenities } = currentPost;

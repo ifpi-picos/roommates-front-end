@@ -1,10 +1,17 @@
-import React from 'react';
-import { Typography, Box, CardHeader, Avatar, Stack, Rating, TextField} from '@mui/material';
+import React, { useState } from 'react';
+import { Typography, Box, CardHeader, Avatar, Stack, Rating, TextField } from '@mui/material';
 
-import { DefaultButton, Flex, Post } from '~/components';
+import { DefaultButton, Flex, Post, SwipeableDrawer } from '~/components';
 import { theme } from '~/styles'
 
-const View = ({ currentPost }) => {
+
+const View = ({ currentPost, ...props }) => {
+  const [open, setOpen] = useState(false);
+
+  const toggleDrawer = (newOpen: boolean) => () => {
+    setOpen(newOpen);
+  };
+
   return (
     <>
       <Post currentPost={currentPost} />
@@ -70,9 +77,11 @@ const View = ({ currentPost }) => {
         <Box sx={{ background: theme.palette.background.lightest, position: 'fixed', bottom: 0, right: '1rem', left: '1rem', padding: '1rem 0' }}>
           <Flex direction="row" alignItems="center" justifyContent="space-between" width="100%">
             <Typography sx={{ width: '100%' }} >R$ 250,00 /mês</Typography>
-            <DefaultButton buttonText="Ver disponibilidade" />
+            <DefaultButton onClick={toggleDrawer(true)} buttonText="Ver disponibilidade" />
           </Flex>
         </Box>
+
+        <SwipeableDrawer open={open} toggleDrawer={toggleDrawer} />
       </Box>
     </>
   )

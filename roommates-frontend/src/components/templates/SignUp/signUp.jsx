@@ -51,16 +51,16 @@ const SignUp = () => {
         }
 
         <FormControlLabel
-            control={
-              <Checkbox checked={true} name={true} />
-            }
-            label="Declaro que li e concordo com o Termo de Uso e a Política de Privacidade"
-            sx={{
-              fontSize: "1px"
-            }}
-          />
+          control={
+            <Checkbox checked={true} name={true} />
+          }
+          label="Declaro que li e concordo com o Termo de Uso e a Política de Privacidade"
+          sx={{
+            fontSize: "1px"
+          }}
+        />
 
-        <DefaultButton onClick={() => handleClick()} buttonText="Continuar" endIcon={<ArrowForwardIos />}/>
+        <DefaultButton onClick={() => handleClick()} buttonText="Continuar" endIcon={<ArrowForwardIos />} />
       </Form>
     </Flex>
   )

@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 
-const Flex = ({children, ...props}) => {
+const Flex = ({ children, ...props }) => {
   return (
     <Box sx={{
       width: props.width || "100%",
@@ -12,7 +12,7 @@ const Flex = ({children, ...props}) => {
       alignItems: props.alignItems || 'start',
       justifyContent: props.justifyContent || 'start',
     }}
-    {...props}
+      {...props}
     >
       {children}
     </Box>

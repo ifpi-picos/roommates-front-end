@@ -9,22 +9,22 @@ const SimpleBottomNavigation = () => {
     {
       label: 'Pesquisar',
       value: 'search',
-      icon: <Search sx={{color: theme.palette.primary.main}} />
+      icon: <Search sx={{ color: theme.palette.primary.main }} />
     },
     {
       label: 'Imóveis',
       value: 'properties',
-      icon: <MapsHomeWork sx={{color: theme.palette.primary.main}}/>
+      icon: <MapsHomeWork sx={{ color: theme.palette.primary.main }} />
     },
     {
       label: 'Favoritos',
       value: 'favorites',
-      icon: <FavoriteBorder sx={{color: theme.palette.primary.main}}/>
+      icon: <FavoriteBorder sx={{ color: theme.palette.primary.main }} />
     },
     {
       label: 'Perfil',
       value: 'profile',
-      icon: <Person sx={{color: theme.palette.primary.main}}/>
+      icon: <Person sx={{ color: theme.palette.primary.main }} />
     }
   ]
   return (

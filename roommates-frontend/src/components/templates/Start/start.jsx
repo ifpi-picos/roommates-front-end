@@ -24,8 +24,8 @@ const Start = () => {
         Iniciar
       </Typography>
       <Form>
-        <Input label="Digite o número da sua matrícula" id="registration-number"/>
-        <DefaultButton onClick={() => handleClick()} buttonText="Continuar" endIcon={<ArrowForwardIos />}/>
+        <Input label="Digite o número da sua matrícula" id="registration-number" />
+        <DefaultButton onClick={() => handleClick()} buttonText="Continuar" endIcon={<ArrowForwardIos />} />
       </Form>
     </Flex>
   )

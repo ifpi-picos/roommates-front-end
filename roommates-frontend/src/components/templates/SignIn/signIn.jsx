@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import {Typography } from "@mui/material";
+import { Typography } from "@mui/material";
+import { ArrowForwardIos } from '@mui/icons-material';
 
 import { Flex, DefaultButton, Form, Input } from "~/components";
 import { theme } from "~/styles";
@@ -26,7 +26,7 @@ const SignIn = () => {
 
   return (
     <Flex>
-       <Typography
+      <Typography
         variant="h1"
         fontSize="36px"
         fontWeight="500"
@@ -43,7 +43,7 @@ const SignIn = () => {
           })
         }
 
-        <DefaultButton onClick={() => handleClick()} buttonText="Continuar" endIcon={<ArrowForwardIosIcon />}/>
+        <DefaultButton onClick={() => handleClick()} buttonText="Continuar" endIcon={<ArrowForwardIos />} />
       </Form>
     </Flex>
   )

@@ -9,8 +9,8 @@ const StarRating = ({ totalRatings }) => {
   console.log('TOTAL', totalRatings)
   return (
     <IconButton aria-label="star rating">
-      <Star sx={{fontSize: '1rem', marginRight: '5px', color: theme.palette.warning.main }}/>
-      <Typography variant='span' textAlign="center" sx={{fontSize: '.85rem'}}>({ totalRatings })</Typography>
+      <Star sx={{ fontSize: '1rem', marginRight: '5px', color: theme.palette.warning.main }} />
+      <Typography variant='span' textAlign="center" sx={{ fontSize: '.85rem' }}>({totalRatings})</Typography>
     </IconButton>
   )
 }
