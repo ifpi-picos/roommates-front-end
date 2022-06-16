@@ -10,11 +10,11 @@ const DefaultButton = ({ buttonText, ...props }) => {
       fullWidth={!props.size ? true : false}
       sx={{
         borderRadius: '24px',
-        minHeight: "2.9375rem",
+        minHeight: props.size ?? "2.9375rem",
         color: theme.palette.colors.lightest,
         background: theme.palette.primary.main,
         textTransform: 'none',
-        fontSize: '1rem'
+        fontSize: props.fontSize ?? '1rem'
       }}
       variant="contained"
       endIcon={props.endIcon}

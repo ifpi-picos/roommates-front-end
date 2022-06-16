@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { Global } from '@emotion/react';
 import { styled } from '@mui/material/styles';
-import { Box, Typography, SwipeableDrawer, CardHeader, Avatar } from '@mui/material';
+import { Box, Typography, SwipeableDrawer, CardHeader, Avatar, CssBaseline } from '@mui/material';
 
 import { theme } from '~/styles'
 import { DefaultButton, Flex } from '~/components/elements';
 import Card from '../Card';
+import { formatToMoney } from '~/services/masks';
 
 const drawerBleeding = 0;
 
@@ -13,9 +14,10 @@ const StyledDrawer = styled(Box)(() => ({
   height: '100%',
   backgroundColor:
     theme.palette.background.lightest,
+    padding: '0 1.5rem  '
 }));
 
-const SwipeableEdgeDrawer = ({ open, toggleDrawer, currentPost }) => {
+const SwipeableEdgeDrawer = ({ open, toggleDrawer, currentPost, ...props }) => {
   let container;
 
   useEffect(() => {
@@ -28,11 +30,11 @@ const SwipeableEdgeDrawer = ({ open, toggleDrawer, currentPost }) => {
 
   return (
     <>
+      <CssBaseline />
       <Global
         styles={{
           '.MuiDrawer-root > .MuiPaper-root': {
-            padding: '1rem 0',
-            height: 'auto',
+            height: `calc(70% - ${drawerBleeding}px)`,
             overflow: 'visible',
           },
         }}
@@ -52,43 +54,30 @@ const SwipeableEdgeDrawer = ({ open, toggleDrawer, currentPost }) => {
       >
         <StyledDrawer
           sx={{
-            padding: '1.5rem 1rem',
+            height: 'auto',
+            padding: '1.5rem 1.5rem',
             borderTopLeftRadius: 8,
             borderTopRightRadius: 8,
             visibility: 'visible',
           }}
         >
-          <Typography sx={{ color: theme.palette.primary.main }}>Ficamos feliz por ter encontrado um lugar para ficar</Typography>
-          <Flex alignItems="flex-end">
-            <DefaultButton size='small' buttonText='R$ 100,00' />
-          </Flex>
+          {props.swipeableDrawerHeader}
 
         </StyledDrawer>
         <StyledDrawer
           sx={{
-            padding: '0 1rem',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1.5rem 0'
           }}
         >
-          <Card
-            images={currentPost.images}
-            starRating={currentPost.starRating}
-            totalComments={currentPost.totalComments}
-          >
-            <Flex direction='row' alignItems="center">
-              {currentPost.description}
-              <CardHeader
-                avatar={
-                  <Avatar alt="Remy Sharp"
-                    src={currentPost.host.image}
-                    sx={{ width: 56, height: 56 }}
-                  />
+          {props.swipeableDrawerMain}
+        </StyledDrawer>
 
-                }
-              />
-            </Flex>
-          </Card>
-
-          <DefaultButton buttonText='Entrar em contato com o anfitrião' />
+        <StyledDrawer sx={{
+          margin: '1.5rem 1rem'
+        }}>
+          {props.swipeableDrawerFooter}
         </StyledDrawer>
       </SwipeableDrawer>
     </>

@@ -10,6 +10,7 @@ export const publications = [
     starRating: 360,
     totalComments: 120,
     description: 'Espaço inteiro: Mobiliado, Área Nobre, 2 Quadras  do Instituo Federal, com garagem.',
+    propertyValue: 100,
     amenities: [
       { room: 1, bathroom: 1, NearTheBusStation: true, girlPreference: true }
     ],
@@ -47,6 +48,7 @@ export const publications = [
     starRating: 360,
     totalComments: 120,
     description: 'Espaço inteiro: Mobiliado, Área Nobre, 2 Quadras  do Instituo Federal, com garagem.',
+    propertyValue: 250,
     amenities: [
       { room: 1, bathroom: 1, NearTheBusStation: true, girlPreference: true }
     ],
@@ -84,6 +86,7 @@ export const publications = [
     starRating: 360,
     totalComments: 120,
     description: 'Espaço inteiro: Mobiliado, Área Nobre, 2 Quadras  do Instituo Federal, com garagem.',
+    propertyValue: 300.60,
     amenities: [
       { room: 1, bathroom: 1, NearTheBusStation: true, girlPreference: true }
     ],
@@ -121,6 +124,7 @@ export const publications = [
     starRating: 360,
     totalComments: 120,
     description: 'Espaço inteiro: Mobiliado, Área Nobre, 2 Quadras  do Instituo Federal, com garagem.',
+    propertyValue: 190,
     amenities: [
       { room: 1, bathroom: 1, NearTheBusStation: true, girlPreference: true }
     ],
@@ -158,6 +162,7 @@ export const publications = [
     starRating: 360,
     totalComments: 120,
     description: 'Espaço inteiro: Mobiliado, Área Nobre, 2 Quadras  do Instituo Federal, com garagem.',
+    propertyValue: 260,
     amenities: [
       { room: 1, bathroom: 1, NearTheBusStation: true, girlPreference: true }
     ],
@@ -195,6 +200,7 @@ export const publications = [
     starRating: 360,
     totalComments: 120,
     description: 'Espaço inteiro: Mobiliado, Área Nobre, 2 Quadras  do Instituo Federal, com garagem.',
+    propertyValue: 500,
     amenities: [
       { room: 1, bathroom: 1, NearTheBusStation: true, girlPreference: true }
     ],
@@ -232,6 +238,7 @@ export const publications = [
     starRating: 360,
     totalComments: 120,
     description: 'Espaço inteiro: Mobiliado, Área Nobre, 2 Quadras  do Instituo Federal, com garagem.',
+    propertyValue: 540,
     amenities: [
       { room: 1, bathroom: 1, NearTheBusStation: true, girlPreference: true }
     ],
@@ -269,6 +276,7 @@ export const publications = [
     starRating: 360,
     totalComments: 120,
     description: 'Espaço inteiro: Mobiliado, Área Nobre, 2 Quadras  do Instituo Federal, com garagem.',
+    propertyValue: 380,
     amenities: [
       { room: 1, bathroom: 1, NearTheBusStation: true, girlPreference: true }
     ],
