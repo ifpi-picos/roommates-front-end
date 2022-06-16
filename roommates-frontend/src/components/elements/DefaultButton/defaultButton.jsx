@@ -6,6 +6,7 @@ import { theme } from "~/styles";
 const DefaultButton = ({buttonText, ...props}) => {
   return (
     <Button
+      {...props}
       fullWidth
       sx={{
         borderRadius: '24px',

@@ -1,11 +1,18 @@
 import React from "react";
+import { useRouter } from "next/router";
 import { Typography } from "@mui/material";
-import { ArrowForwardIosIcon } from '@mui/icons-material';
+import { ArrowForwardIos } from '@mui/icons-material';
 
 import { Flex, DefaultButton, Form, Input } from "~/components";
 import { theme } from "~/styles";
 
 const Start = () => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    return router.push('/cadastrar')
+  }
+
   return (
     <Flex>
       <Typography
@@ -18,7 +25,7 @@ const Start = () => {
       </Typography>
       <Form>
         <Input label="Digite o número da sua matrícula" id="registration-number"/>
-        <DefaultButton buttonText="Continuar" endIcon={<ArrowForwardIosIcon />}/>
+        <DefaultButton onClick={() => handleClick()} buttonText="Continuar" endIcon={<ArrowForwardIos />}/>
       </Form>
     </Flex>
   )

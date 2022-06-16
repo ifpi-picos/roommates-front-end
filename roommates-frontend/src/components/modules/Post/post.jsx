@@ -1,22 +1,22 @@
 import React from 'react';
-import { Box, Card, CardActions, CardContent, CardMedia, IconButton, Typography } from '@mui/material';
-import { ArrowBack, Favorite, Star } from '@mui/icons-material';
+import { Box, Card, CardActions, CardContent, CardMedia, Grid, IconButton, Typography } from '@mui/material';
+import { ArrowBack, Favorite, Star, Bed } from '@mui/icons-material';
 
 import { Carousel, Flex, FavoritedButton, StarRating, TotalComments } from '~/components';
 import { theme } from '~/styles';
 import Link from 'next/link';
 
 const Post = ({ currentPost }) => {
-  const { images, starRating, totalComments, description } = currentPost;
+  const { images, starRating, totalComments, description, amenities } = currentPost;
   return (
     <Card className='card-container'>
       <CardActions className='card-container__actions' disableSpacing>
         <Link href="/home">
-          <IconButton disableRipple sx={{background: theme.palette.background.lightest, color: theme.palette.colors.pink}} aria-label="add to favorites">
+          <IconButton disableRipple sx={{ background: theme.palette.background.lightest, color: theme.palette.colors.pink }} aria-label="add to favorites">
             <ArrowBack />
           </IconButton>
         </Link>
-        <FavoritedButton disableRipple sx={{background: theme.palette.background.lightest}}/>
+        <FavoritedButton disableRipple sx={{ background: theme.palette.background.lightest }} />
       </CardActions>
       <Carousel>
         {images.map(image => {
@@ -40,9 +40,9 @@ const Post = ({ currentPost }) => {
 
       <Flex direction="row" justifyContent="space-between" width="60%" alignItems="center">
         <StarRating totalRatings={starRating} />
-        <TotalComments totalComments={totalComments}/>
+        <TotalComments totalComments={totalComments} />
       </Flex>
-    </Card>
+    </Card >
   );
 }
 

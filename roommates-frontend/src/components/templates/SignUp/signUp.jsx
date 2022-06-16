@@ -1,11 +1,18 @@
 import React from "react";
-import { Checkbox, FormControlLabel, TextField, Typography } from "@mui/material";
-import { ArrowForwardIosIcon } from '@mui/icons-material';
+import { useRouter } from "next/router";
+import { Checkbox, FormControlLabel, Typography } from "@mui/material";
+import { ArrowForwardIos } from '@mui/icons-material';
 
 import { theme } from "~/styles";
 import { Flex, DefaultButton, Form, Input } from "~/components";
 
 const SignUp = () => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    return router.push('/login')
+  }
+
   const actions = [
     {
       id: 'full-name',
@@ -53,7 +60,7 @@ const SignUp = () => {
             }}
           />
 
-        <DefaultButton buttonText="Continuar" endIcon={<ArrowForwardIosIcon />}/>
+        <DefaultButton onClick={() => handleClick()} buttonText="Continuar" endIcon={<ArrowForwardIos />}/>
       </Form>
     </Flex>
   )

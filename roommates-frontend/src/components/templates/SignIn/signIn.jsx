@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import {Typography } from "@mui/material";
 
@@ -6,6 +7,8 @@ import { Flex, DefaultButton, Form, Input } from "~/components";
 import { theme } from "~/styles";
 
 const SignIn = () => {
+  const router = useRouter();
+
   const actions = [
     {
       id: 'email',
@@ -16,6 +19,11 @@ const SignIn = () => {
       label: 'Senha'
     },
   ]
+
+  const handleClick = () => {
+    router.push('/home')
+  }
+
   return (
     <Flex>
        <Typography
@@ -35,7 +43,7 @@ const SignIn = () => {
           })
         }
 
-        <DefaultButton buttonText="Continuar" endIcon={<ArrowForwardIosIcon />}/>
+        <DefaultButton onClick={() => handleClick()} buttonText="Continuar" endIcon={<ArrowForwardIosIcon />}/>
       </Form>
     </Flex>
   )
