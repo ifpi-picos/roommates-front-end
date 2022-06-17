@@ -34,6 +34,7 @@ const SimpleBottomNavigationAction = () => {
         actions.map((action, index) =>
           <BottomNavigationAction
             key={index}
+            showLabel
             sx={{ justifyContent: 'space-evenly' }}
             label={action.label}
             value={action.value}
