@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Typography, Box, CardHeader, Avatar, Stack, Rating, TextField } from '@mui/material';
 
-import { Card, DefaultButton, Flex, Post, SwipeableDrawer } from '~/components';
+import { Card, DefaultButton, Flex, ModalToGetInTouch, Post, SwipeableDrawer } from '~/components';
 import { theme } from '~/styles'
+import { formatToMoney } from '~/services/masks';
 
 
 const View = ({ currentPost }) => {
@@ -76,50 +77,12 @@ const View = ({ currentPost }) => {
 
         <Box sx={{ background: theme.palette.background.lightest, position: 'fixed', bottom: 0, right: '1rem', left: '1rem', padding: '1rem 0' }}>
           <Flex direction="row" alignItems="center" justifyContent="space-between" width="100%">
-            <Typography sx={{ width: '100%' }} >R$ 250,00 /mês</Typography>
+            <Typography sx={{ width: '100%' }} >{formatToMoney(currentPost.propertyValue)} /mês</Typography>
             <DefaultButton onClick={toggleDrawer(true)} buttonText="Ver disponibilidade" />
           </Flex>
         </Box>
 
-        <SwipeableDrawer currentPost={currentPost} open={open} toggleDrawer={toggleDrawer}
-          swipeableDrawerHeader={(
-            <>
-              <Typography sx={{ color: theme.palette.primary.main, fontSize: '1.125rem' }}>Ficamos feliz por ter encontrado um lugar para ficar</Typography>
-              <Flex alignItems="flex-end">
-                <DefaultButton size="small" fontSize=".85rem" buttonText='R$ 100,00' />
-              </Flex>
-            </>
-          )}
-          swipeableDrawerMain={
-            <>
-              <Card
-                images={currentPost.images}
-                starRating={currentPost.starRating}
-                totalComments={currentPost.totalComments}
-              >
-                <Flex direction='row' alignItems="center">
-                  {currentPost.description}
-                  <CardHeader
-                  sx={{ padding: '0 0 0 .5rem' }}
-                    avatar={
-                      <Avatar alt="Remy Sharp"
-                        src={currentPost.host.image}
-                        sx={{ width:48, height:48 }}
-                      />
-
-                    }
-                  />
-                </Flex>
-              </Card>
-            </>
-          }
-
-          swipeableDrawerFooter={
-            <>
-              <DefaultButton buttonText='Entrar em contato com o anfitrião' />
-            </>
-          }
-        />
+          <ModalToGetInTouch currentPost={currentPost} open={open} toggleDrawer={toggleDrawer}/>
       </Box>
     </>
   )
