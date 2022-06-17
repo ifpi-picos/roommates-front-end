@@ -1,5 +1,5 @@
 import React from 'react';
-import { BottomNavigation, Container, Flex, SearchBar } from '~/components';
+import { BottomNavigation, BottomNavigationAction, Container, Flex, SearchBar } from '~/components';
 
 const withTemplateHomePage = Component => {
   const ExtendedComponent = props => {
@@ -9,7 +9,9 @@ const withTemplateHomePage = Component => {
           <SearchBar />
             <Component {...props} />
         </Container>
-        <BottomNavigation />
+        <BottomNavigation>
+          <BottomNavigationAction />
+        </BottomNavigation>
       </Flex>
     )
   };

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Typography, Box, CardHeader, Avatar, Stack, Rating, TextField } from '@mui/material';
 
-import { Card, DefaultButton, Flex, ModalToGetInTouch, Post, SwipeableDrawer } from '~/components';
+import { BottomNavigation, Card, DefaultButton, Flex, ModalToGetInTouch, Post, SwipeableDrawer } from '~/components';
 import { theme } from '~/styles'
-import { formatToMoney } from '~/services/masks';
+import BottomNavigationContact from '~/components/modules/BottomNavigationContact';
 
 
 const View = ({ currentPost }) => {
@@ -75,12 +75,9 @@ const View = ({ currentPost }) => {
           }
         </Box>
 
-        <Box sx={{ background: theme.palette.background.lightest, position: 'fixed', bottom: 0, right: '1rem', left: '1rem', padding: '1rem 0' }}>
-          <Flex direction="row" alignItems="center" justifyContent="space-between" width="100%">
-            <Typography sx={{ width: '100%' }} >{formatToMoney(currentPost.propertyValue)} /mês</Typography>
-            <DefaultButton onClick={toggleDrawer(true)} buttonText="Ver disponibilidade" />
-          </Flex>
-        </Box>
+        <BottomNavigation>
+          <BottomNavigationContact currentPost={currentPost} toggleDrawer={toggleDrawer}/>
+        </BottomNavigation>
 
           <ModalToGetInTouch currentPost={currentPost} open={open} toggleDrawer={toggleDrawer}/>
       </Box>
