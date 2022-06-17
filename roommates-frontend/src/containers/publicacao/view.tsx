@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Typography, Box, CardHeader, Avatar, Stack, Rating, TextField, CardActions } from '@mui/material';
 
-import { Assessments, BottomNavigation, Card, DefaultButton, BottomNavigationContact, ModalToGetInTouch, StarRating, Flex, Post } from '~/components';
+import { Assessments, BottomNavigation, Card, DefaultButton, BottomNavigationContact, ModalToGetInTouch, StarRating, Flex, Post, Comments } from '~/components';
 import { theme } from '~/styles'
 
 
@@ -35,30 +35,10 @@ const View = ({ currentPost }) => {
           <Typography>{currentPost.host.description}</Typography>
         </Box>
 
-        <Box sx={{ padding: '2rem 0' }}>
-          <Typography variant='h1' sx={{ fontSize: '22px', color: theme.palette.primary.main }}>Feedback</Typography>
-          <Stack spacing={1}>
-            <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
-          </Stack>
+        <Comments />
 
-          <TextField
-            sx={{ marginTop: '1rem' }}
-            id="outlined-multiline-static"
-            label="Multiline"
-            fullWidth
-            multiline
-            rows={4}
-            defaultValue="Faça um comentário sobre sua experiência aqui"
-          />
-        </Box>
         <Box sx={{ marginBottom: '5rem' }}>
-          {
-            currentPost.assessments.map(evaluation => {
-              return (
-                <Assessments evaluation={evaluation}/>
-              )
-            })
-          }
+          <Assessments currentPost={currentPost} />
 
           <Box sx={{ padding: '1rem 2rem 2rem' }}>
             <DefaultButton variant="text" colors={theme.palette.primary.main} bg={theme.palette.background.lightest} buttonText="Ver mais feedbacks" />
