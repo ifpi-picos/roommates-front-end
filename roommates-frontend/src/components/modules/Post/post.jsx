@@ -7,10 +7,10 @@ import { Card, CardActions, CardContent, CardMedia, Grid, IconButton, Typography
 import { Carousel, Flex, FavoritedButton, StarRating, TotalComments } from '~/components';
 import { theme } from '~/styles';
 
-const Post = ({ currentPost }) => {
-  const { images, starRating, totalComments, description, amenities } = currentPost;
+const Post = ({ currentPost, ...props }) => {
+  const { images, starRating, totalComments, description } = currentPost;
   return (
-    <Card className='card-container'>
+    <Card sx={{ boxShadow: props.boxShadow }} className='card-container'>
       <CardActions className='card-container__actions' disableSpacing>
         <Link href="/home">
           <IconButton disableRipple sx={{ background: theme.palette.background.lightest, color: theme.palette.colors.pink }} aria-label="add to favorites">
@@ -33,7 +33,7 @@ const Post = ({ currentPost }) => {
         })}
       </Carousel>
 
-      <CardContent>
+      <CardContent sx={{ paddingBottom: 0 }}>
         <Typography color={theme.palette.colors.dark} variant="body2">
           {description}
         </Typography>

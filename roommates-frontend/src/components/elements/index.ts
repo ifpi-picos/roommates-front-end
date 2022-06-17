@@ -1,4 +1,5 @@
 export { default as BottomNavigationAction } from './BottomNavigationAction';
+export { default as CardHeader } from './CardHeader';
 export { default as Carousel } from './Carousel';
 export { default as Container } from './Container';
 export { default as DefaultButton } from './DefaultButton';

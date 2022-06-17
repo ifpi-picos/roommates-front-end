@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Typography, Box, CardHeader, Avatar, Stack, Rating, TextField, CardActions } from '@mui/material';
+import { Typography, Box,  Avatar, Stack, Rating, TextField, CardActions } from '@mui/material';
 
-import { Assessments, BottomNavigation, Card, DefaultButton, BottomNavigationContact, ModalToGetInTouch, StarRating, Flex, Post, Comments } from '~/components';
+import { Assessments, BottomNavigation, CardHeader, DefaultButton, BottomNavigationContact, ModalToGetInTouch, StarRating, Flex, Post, Comments } from '~/components';
 import { theme } from '~/styles'
 
 
@@ -14,24 +14,15 @@ const View = ({ currentPost }) => {
 
   return (
     <>
-      <Post currentPost={currentPost} />
+      <Post currentPost={currentPost} boxShadow="none"/>
       <Box sx={{ padding: '2rem 1rem' }}>
-        <Typography variant='h1' sx={{ fontSize: '22px', color: theme.palette.primary.main }}>Localização</Typography>
+        <Typography variant='h1' sx={{ fontSize: '22px', color: theme.palette.primary.main, marginBottom: '1rem' }}>Localização</Typography>
         <Typography>{currentPost.localization}</Typography>
 
         <Box sx={{ padding: '2rem 0' }}>
-          <Typography variant='h1' sx={{ fontSize: '22px', color: theme.palette.primary.main }}>Quem está alugando</Typography>
-          <CardHeader
-            avatar={
-              <Avatar alt="Remy Sharp"
-                src={currentPost.host.image}
-                sx={{ width: 56, height: 56 }}
-              />
+          <Typography variant='h1' sx={{ fontSize: '22px', color: theme.palette.primary.main, marginBottom: '1rem' }}>Quem está alugando</Typography>
 
-            }
-            title={currentPost.host.name}
-            subheader={currentPost.publicationDate}
-          />
+          <CardHeader currentPost={currentPost}/>
           <Typography>{currentPost.host.description}</Typography>
         </Box>
 
