@@ -11,12 +11,12 @@ const DefaultButton = ({ buttonText, ...props }) => {
       sx={{
         borderRadius: '24px',
         minHeight: props.size ?? "2.9375rem",
-        color: theme.palette.colors.lightest,
-        background: theme.palette.primary.main,
+        color: props.colors ?? theme.palette.colors.lightest,
+        background: props.bg ?? theme.palette.primary.main,
         textTransform: 'none',
         fontSize: props.fontSize ?? '1rem'
       }}
-      variant="contained"
+      variant={props.variant ?? "contained"}
       endIcon={props.endIcon}
       startIcon={props.startIcon}
     >

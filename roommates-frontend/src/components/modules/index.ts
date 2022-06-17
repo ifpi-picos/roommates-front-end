@@ -1,3 +1,4 @@
+export { default as Assessments } from './Assessments';
 export { default as BottomNavigation } from './BottomNavigation';
 export { default as BottomNavigationContact } from './BottomNavigationContact';
 export { default as Card } from './Card';

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Typography, Box, CardHeader, Avatar, Stack, Rating, TextField } from '@mui/material';
+import { Typography, Box, CardHeader, Avatar, Stack, Rating, TextField, CardActions } from '@mui/material';
 
-import { BottomNavigation, Card, DefaultButton, Flex, ModalToGetInTouch, Post, SwipeableDrawer } from '~/components';
+import { Assessments, BottomNavigation, Card, DefaultButton, BottomNavigationContact, ModalToGetInTouch, StarRating, Flex, Post } from '~/components';
 import { theme } from '~/styles'
-import BottomNavigationContact from '~/components/modules/BottomNavigationContact';
 
 
 const View = ({ currentPost }) => {
@@ -56,30 +55,22 @@ const View = ({ currentPost }) => {
           {
             currentPost.assessments.map(evaluation => {
               return (
-                <>
-                  <CardHeader
-                    avatar={
-                      <Avatar alt="Remy Sharp"
-                        src={evaluation.profileImage}
-                        sx={{ width: 56, height: 56 }}
-                      />
-
-                    }
-                    title={evaluation.name}
-                    subheader={currentPost.publicationDate}
-                  />
-                  <Typography>{evaluation.description}</Typography>
-                </>
+                <Assessments evaluation={evaluation}/>
               )
             })
           }
+
+          <Box sx={{ padding: '1rem 2rem 2rem' }}>
+            <DefaultButton variant="text" colors={theme.palette.primary.main} bg={theme.palette.background.lightest} buttonText="Ver mais feedbacks" />
+          </Box>
         </Box>
 
-        <BottomNavigation>
-          <BottomNavigationContact currentPost={currentPost} toggleDrawer={toggleDrawer}/>
+        <BottomNavigation border="none">
+          <BottomNavigationContact currentPost={currentPost} toggleDrawer={toggleDrawer} />
         </BottomNavigation>
 
-          <ModalToGetInTouch currentPost={currentPost} open={open} toggleDrawer={toggleDrawer}/>
+
+        <ModalToGetInTouch currentPost={currentPost} open={open} toggleDrawer={toggleDrawer} />
       </Box>
     </>
   )

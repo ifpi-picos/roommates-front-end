@@ -3,7 +3,7 @@ import { BottomNavigation } from '@mui/material';
 
 import { theme } from '~/styles';
 
-const SimpleBottomNavigation = ({ children }) => {
+const SimpleBottomNavigation = ({ children, ...props }) => {
 
   return (
     <BottomNavigation
@@ -15,8 +15,9 @@ const SimpleBottomNavigation = ({ children }) => {
           left: 0,
           right: 0,
           minHeight: '8%',
-          borderTop: '1px solid',
-          borderColor: theme.palette.borders.gray
+          borderTop: props.border || '1px solid',
+          borderColor: theme.palette.borders.gray,
+          zIndex: 30
         }
       }
     >
